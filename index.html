@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <title>Roadmap - Trecy Fravallo</title>
     <style>
-        /* On définit les couleurs une par une sans variables complexes */
         body { 
             background-color: #008ba3; 
             margin: 0; 
             padding: 20px;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,72 +22,92 @@
             max-width: 500px;
             border-top: 15px solid #2c3e50;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
         }
 
         h1 { 
             color: #2c3e50; 
-            margin-top: 0;
-            font-size: 24px;
+            margin: 0;
+            font-size: 26px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .description { 
             color: #008ba3; 
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 30px;
-            border-bottom: 1px solid #eeeeee;
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee;
             padding-bottom: 10px;
         }
 
-        ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0;
-        }
+        ul { list-style: none; padding: 0; margin: 0; }
 
         li { 
-            margin-bottom: 20px; 
-            padding-left: 30px; 
+            margin-bottom: 25px; 
+            padding-left: 35px; 
             position: relative; 
             color: #2c3e50;
             font-size: 16px;
-            line-height: 1.4;
         }
 
-        /* La petite puce carrée */
+        /* La puce de base */
         li::before { 
             content: ""; 
             position: absolute; 
             left: 0; 
-            top: 5px; 
+            top: 4px; 
             width: 12px; 
             height: 12px; 
-            background-color: #dddddd; 
+            background-color: #e0e0e0; 
         }
 
-        /* La puce quand c'est en cours */
-        li.en-cours::before { 
+        /* Animation Pulse pour les étapes actives */
+        li.active::before { 
             background-color: #008ba3; 
+            animation: pulse-blue 2s infinite;
+        }
+
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(0, 139, 163, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 139, 163, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 139, 163, 0); }
         }
 
         .label { 
-            font-size: 11px; 
-            background: #f0f0f0; 
+            font-size: 10px; 
+            background: #008ba3; 
+            color: white;
             padding: 2px 8px; 
             margin-left: 10px;
-            color: #666666;
-            font-weight: bold;
+            border-radius: 2px;
+            vertical-align: middle;
         }
 
+        /* Animation d'écriture pour l'objectif */
         .objectif { 
             margin-top: 30px; 
             padding: 15px; 
             background: #f9f9f9; 
-            border-left: 5px solid #008ba3;
+            border-left: 5px solid #2c3e50;
             font-weight: bold;
             color: #2c3e50;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards;
+            animation-delay: 1s;
         }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
     </style>
 </head>
 <body>
@@ -98,14 +117,14 @@
         <div class="description">Suivi de progression : Parcours Web</div>
 
         <ul>
-            <li class="en-cours">Bases du HTML5 & Structure <span class="label">EN COURS</span></li>
-            <li class="en-cours">Stylisation CSS3 & Mise en page <span class="label">EN COURS</span></li>
+            <li class="active">Bases du HTML5 & Structure <span class="label">EN COURS</span></li>
+            <li class="active">Stylisation CSS3 & Mise en page <span class="label">EN COURS</span></li>
             <li>Immersion en entreprise (PMSMP)</li>
             <li>Phase de renforcement : PHP & Java</li>
         </ul>
 
         <div class="objectif">
-            🎯 OBJECTIF : Développeur Web et Web Mobile (2026)
+            🎯 OBJECTIF : Développeur Web et Web Mobile
         </div>
     </div>
 
