@@ -2,49 +2,112 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap Trecy Fravallo</title>
+    <title>Roadmap - Trecy Fravallo</title>
     <style>
+        /* On définit les couleurs une par une sans variables complexes */
         body { 
             background-color: #008ba3; 
-            font-family: Arial, sans-serif; 
             margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .card { 
-            background: white; 
-            padding: 30px; 
-            width: 90%; 
-            max-width: 450px; 
-            border-top: 12px solid #2c3e50; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+        .container { 
+            background-color: #ffffff; 
+            padding: 40px; 
+            width: 100%;
+            max-width: 500px;
+            border-top: 15px solid #2c3e50;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        h1 { color: #2c3e50; margin-top: 0; text-transform: uppercase; font-size: 1.5rem; }
-        .sub { color: #008ba3; font-weight: bold; margin-bottom: 25px; font-size: 0.9rem; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 15px; padding-left: 25px; position: relative; color: #2c3e50; line-height: 1.4; }
-        li::before { content: '■'; position: absolute; left: 0; color: #ddd; }
-        li.active::before { color: #008ba3; }
-        .tag { font-size: 0.7rem; background: #eee; padding: 2px 5px; margin-left: 10px; color: #666; }
-        .goal { margin-top: 25px; padding: 15px; background: #f4f4f4; border-left: 4px solid #008ba3; font-weight: bold; font-size: 0.85rem; }
+
+        h1 { 
+            color: #2c3e50; 
+            margin-top: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .description { 
+            color: #008ba3; 
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 10px;
+        }
+
+        ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0;
+        }
+
+        li { 
+            margin-bottom: 20px; 
+            padding-left: 30px; 
+            position: relative; 
+            color: #2c3e50;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        /* La petite puce carrée */
+        li::before { 
+            content: ""; 
+            position: absolute; 
+            left: 0; 
+            top: 5px; 
+            width: 12px; 
+            height: 12px; 
+            background-color: #dddddd; 
+        }
+
+        /* La puce quand c'est en cours */
+        li.en-cours::before { 
+            background-color: #008ba3; 
+        }
+
+        .label { 
+            font-size: 11px; 
+            background: #f0f0f0; 
+            padding: 2px 8px; 
+            margin-left: 10px;
+            color: #666666;
+            font-weight: bold;
+        }
+
+        .objectif { 
+            margin-top: 30px; 
+            padding: 15px; 
+            background: #f9f9f9; 
+            border-left: 5px solid #008ba3;
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
+
+    <div class="container">
         <h1>Trecy Fravallo</h1>
-        <p class="sub">PARCOURS D'APPRENTISSAGE WEB : SUIVI DE PROGRESSION</p>
+        <div class="description">Suivi de progression : Parcours Web</div>
+
         <ul>
-            <li class="active">Bases du HTML5 & Structure <span class="tag">EN COURS</span></li>
-            <li class="active">Stylisation CSS3 & Mise en page <span class="tag">EN COURS</span></li>
-            <li>Immersion en milieu professionnel (PMSMP)</li>
-            <li>Phase de renforcement technique : PHP & Java</li>
+            <li class="en-cours">Bases du HTML5 & Structure <span class="label">EN COURS</span></li>
+            <li class="en-cours">Stylisation CSS3 & Mise en page <span class="label">EN COURS</span></li>
+            <li>Immersion en entreprise (PMSMP)</li>
+            <li>Phase de renforcement : PHP & Java</li>
         </ul>
-        <div class="goal">
+
+        <div class="objectif">
             🎯 OBJECTIF : Développeur Web et Web Mobile (2026)
         </div>
     </div>
+
 </body>
 </html>
