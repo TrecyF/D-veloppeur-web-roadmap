@@ -2,129 +2,176 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Roadmap - Trecy Fravallo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Professionnelle - Trecy Fravallo</title>
     <style>
-        body { 
-            background-color: #008ba3; 
-            margin: 0; 
-            padding: 20px;
-            font-family: 'Segoe UI', Arial, sans-serif;
+        :root {
+            --primary: #008ba3; /* Bleu Pétrole */
+            --dark: #2c3e50;    /* Anthracite */
+            --bg: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
-        .container { 
-            background-color: #ffffff; 
-            padding: 40px; 
+        .container {
+            background: var(--white);
             width: 100%;
-            max-width: 500px;
-            border-top: 15px solid #2c3e50;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 600px;
+            padding: 40px;
+            border-top: 15px solid var(--dark);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             position: relative;
-            overflow: hidden;
         }
 
-        h1 { 
-            color: #2c3e50; 
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--dark);
             margin: 0;
-            font-size: 26px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-size: 24px;
         }
 
-        .description { 
-            color: #008ba3; 
+        .subtitle {
+            color: var(--primary);
             font-weight: bold;
-            font-size: 13px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        ul { list-style: none; padding: 0; margin: 0; }
-
-        li { 
-            margin-bottom: 25px; 
-            padding-left: 35px; 
-            position: relative; 
-            color: #2c3e50;
-            font-size: 16px;
-        }
-
-        /* La puce de base */
-        li::before { 
-            content: ""; 
-            position: absolute; 
-            left: 0; 
-            top: 4px; 
-            width: 12px; 
-            height: 12px; 
-            background-color: #e0e0e0; 
-        }
-
-        /* Animation Pulse pour les étapes actives */
-        li.active::before { 
-            background-color: #008ba3; 
-            animation: pulse-blue 2s infinite;
-        }
-
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(0, 139, 163, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 139, 163, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 139, 163, 0); }
-        }
-
-        .label { 
-            font-size: 10px; 
-            background: #008ba3; 
-            color: white;
-            padding: 2px 8px; 
-            margin-left: 10px;
-            border-radius: 2px;
-            vertical-align: middle;
-        }
-
-        /* Animation d'écriture pour l'objectif */
-        .objectif { 
-            margin-top: 30px; 
-            padding: 15px; 
-            background: #f9f9f9; 
-            border-left: 5px solid #2c3e50;
-            font-weight: bold;
-            color: #2c3e50;
             font-size: 14px;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            animation: typing 3s steps(40, end) forwards;
-            animation-delay: 1s;
+            margin-top: 5px;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
         }
 
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 3px;
+            background: #e0e0e0;
+        }
+
+        .event {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background: #ccc;
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .event.active::before {
+            background: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 139, 163, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .date {
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            color: var(--dark);
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .badge {
+            font-size: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        .objectif {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 5px solid var(--dark);
+            font-weight: bold;
+            color: var(--dark);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Trecy Fravallo</h1>
-        <div class="description">Suivi de progression : Parcours Web</div>
+        <header>
+            <h1>Trecy Fravallo</h1>
+            <div class="subtitle">Parcours Développeur Web & Web Mobile</div>
+        </header>
 
-        <ul>
-            <li class="active">Bases du HTML5 & Structure <span class="label">EN COURS</span></li>
-            <li class="active">Stylisation CSS3 & Mise en page <span class="label">EN COURS</span></li>
-            <li>Immersion en entreprise (PMSMP)</li>
-            <li>Phase de renforcement : PHP & Java</li>
-        </ul>
+        <div class="timeline">
+            
+            <div class="event active">
+                <span class="date">Mars - Mai 2026</span>
+                <div class="content">Prépa Compétences (AFPA / France Travail) <span class="badge">EN COURS</span></div>
+            </div>
+
+            <div class="event active">
+                <span class="date">En cours</span>
+                <div class="content">Auto-formation : HTML5, CSS3 & JavaScript <span class="badge">EN COURS</span></div>
+            </div>
+
+            <div class="event active">
+                <span class="date">En cours</span>
+                <div class="content">Initiation technique : PHP & Java <span class="badge">EN COURS</span></div>
+            </div>
+
+            <div class="event">
+                <span class="date">Prochaine étape</span>
+                <div class="content">Immersion Professionnelle (PMSMP) - Aetia Informatique</div>
+            </div>
+
+            <div class="event">
+                <span class="date">Fin 2026</span>
+                <div class="content">Entrée en formation qualifiante (ENI École Informatique)</div>
+            </div>
+
+        </div>
 
         <div class="objectif">
-            🎯 OBJECTIF : Développeur Web et Web Mobile
+            🎯 Objectif : Développeur Web & Web Mobile
         </div>
     </div>
 
